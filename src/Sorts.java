@@ -26,4 +26,30 @@ public class Sorts
         for (int num :  arr)
             System.out.print(num + " ");
     }
+
+    public static void ascendingSort(String[] arr)
+    {
+        for (int i = 0; i < arr.length-1; i++)
+        {
+            int lowPosition = i;
+            for (int j = i +1; j < arr.length; j++)
+            {
+                if (arr[j].compareTo(arr[lowPosition]) < 0)
+                    lowPosition = j;
+            }
+            swap(i, lowPosition, arr);
+        }
+    }
+    public static void swap(int indexA, int indexB, String[] arr)
+    {
+        String temp = arr[indexA];
+        arr[indexA] = arr[indexB];
+        arr[indexB] = temp;
+
+    }
+    public static void printStArr(String[] arr)
+    {
+        for (String word :  arr)
+            System.out.print(word + " ");
+    }
 }
